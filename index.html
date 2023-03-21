@@ -4,6 +4,15 @@
         <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
     </head>
     <style>
+            button[type="button"] {
+                background-color: #e5e5e5;
+                border: none;
+                cursor: pointer;
+                text-align: center;
+                padding: 1em;
+                margin: auto;
+                display: block;
+            }
         html{
             font-family: Verdana, Geneva, Tahoma, sans-serif;
         }
@@ -94,6 +103,7 @@
                 </tbody>
             </table>
             <p><i>Nota.</i> Esta tabla contiene los valores a ingresar, para generar la solución al problema planteado, para poder generar resultados debe de estar totalmente llena.</p>
+            <br><button type="button" onclick="limpiar();">Limpiar valores</button>
             <p id="err"></p>
             <p>
                 Encuentre la probabilidad de que la compañía encuentre petróleo o gas.
@@ -355,5 +365,12 @@
             chart.draw(data, options);
             }
         }
+        function limpiar(){
+        var prod = document.getElementsByName("txt_probabilidad");
+        for(var i=0;i<prod.length;i++){
+            prod[i].setAttribute("value","");
+            prod[i].value = "";
+        }
+    }
         </script>
 </html>
